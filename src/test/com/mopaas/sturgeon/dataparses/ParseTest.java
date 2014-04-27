@@ -15,8 +15,8 @@ public class ParseTest extends TestCase {
  
  public void testGet()  throws Exception{
 	 Parse p = new Parse();
-//	 Document doc= p.get(URL1);
-	 Document doc= p.get(URL2);
+	 Document doc= p.get(URL1);
+//	 Document doc= p.get(URL2);
 	 System.out.println(doc.toString());
 //	 System.out.println("__________________________________________________\n");
 //	 Element elist=doc.getElementsByClass("data_tbl").get(1);
