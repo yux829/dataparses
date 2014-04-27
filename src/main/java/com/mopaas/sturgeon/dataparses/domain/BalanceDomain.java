@@ -1,5 +1,7 @@
 package com.mopaas.sturgeon.dataparses.domain;
 
+import java.util.Date;
+
 public class BalanceDomain {
 
 	private Date curdate;//
