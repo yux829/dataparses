@@ -2,26 +2,56 @@ package com.mopaas.sturgeon.dataparses.domain;
 
 import java.util.Date;
 
+import org.nutz.dao.entity.annotation.Column;
+import org.nutz.dao.entity.annotation.Name;
+import org.nutz.dao.entity.annotation.PK;
+import org.nutz.dao.entity.annotation.Table;
+@Table("t_balance")
+@PK({"symbol","curdate","reporttype"})
 public class BalanceDomain {
 //单位：百万美元
-	private String code;//
+	@Column
+	private String symbol;//
+	@Column
 	private String name;//
-	private Date curdate;//
+	@Column
+	private String curdate;//
+	@Column
+	private String reporttype;//00 年报 01 季报
+	
+	@Column
 	private double cash_shortinvest;//现金及短期投资
+	@Column
 	private double receivables;//应收账款总计
+	@Column
 	private double stock;//库存
+	@Column
 	private double assets_current;//流动资产总额
+	@Column
 	private double assets_total; //总资产
+	@Column
 	private double debts_current;//流动负债
+	@Column
 	private double debts_total;//总负债
+	@Column
 	private double shareholders;//股东权益
+	@Column
 	private double stocks_numbers;//普通股数
+	@Column
 	private Date lastUpdateTime;//
-	public String getCode() {
-		return code;
+
+
+	public String getReporttype() {
+		return reporttype;
 	}
-	public void setCode(String code) {
-		this.code = code;
+	public void setReporttype(String reporttype) {
+		this.reporttype = reporttype;
+	}
+	public String getSymbol() {
+		return symbol;
+	}
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
 	}
 	public String getName() {
 		return name;
@@ -29,10 +59,11 @@ public class BalanceDomain {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getCurdate() {
+
+	public String getCurdate() {
 		return curdate;
 	}
-	public void setCurdate(Date curdate) {
+	public void setCurdate(String curdate) {
 		this.curdate = curdate;
 	}
 	public double getCash_shortinvest() {
