@@ -23,10 +23,10 @@ public class BalanceLoadDataService extends BaseLoadDataService {
 	public static List<BalanceDomain> parse(String symbol) {
 		Segment URL = new CharSegment(URL_Seg_ANNU);
 		URL.set("CODE", symbol);
-		List<BalanceDomain> bdlist = parseDoc(getBalanceContent(URL.toString()),REPORT_TYPE_ANNU);
+		List<BalanceDomain> bdlist = parseDoc(getURLContent(URL.toString()),REPORT_TYPE_ANNU);
 		URL = new CharSegment(URL_Seg_QUAR);
 		URL.set("CODE", symbol);
-		bdlist.addAll(parseDoc(getBalanceContent(URL.toString()),REPORT_TYPE_QUAR));
+		bdlist.addAll(parseDoc(getURLContent(URL.toString()),REPORT_TYPE_QUAR));
 		return bdlist;
 
 	}
